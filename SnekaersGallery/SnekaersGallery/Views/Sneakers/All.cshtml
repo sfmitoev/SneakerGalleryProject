@@ -1,0 +1,33 @@
+﻿@model  IEnumerable<SnekaersGallery.Models.Sneakers.AllSneakerModel>
+@{
+    ViewBag.Title = "All Sneakers";
+}
+    
+@if (!Model.Any())
+{
+    <h2 class="text-center">No more pictures.</h2>
+}
+
+<div class="row">
+    @foreach (var sneaker in Model)
+    {
+        <div class="col-xs-4">
+            <a href="../Sneakers/Details/@sneaker.Id " />
+            <img src="@sneaker.ImageUrl" class="img-responsive" width="400" height="285">
+
+        </div>
+
+
+
+
+    }
+</div>
+
+<br/>
+
+    <div>
+        <p class="text-center mt-50">
+            <a href="../Sneakers/All?page=@(ViewBag.CurrentPage-1) " class="btn btn-danger btn-lg @(ViewBag.CurrentPage==1 ? "disabled" : string.Empty)">Previous<<</a>
+            <a href="../Sneakers/All?page=@(ViewBag.CurrentPage + 1) " class="btn btn-danger btn-lg @(!Model.Any() || Model.Count() <  6 ? "disabled" : string.Empty)">>>Next</a>
+        </p>
+    </div>

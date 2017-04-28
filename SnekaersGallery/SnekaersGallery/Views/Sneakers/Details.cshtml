@@ -1,0 +1,32 @@
+﻿@model SnekaersGallery.Models.Sneakers.SneakerDetails
+    
+@{
+    ViewBag.Title = "Details";
+}
+    
+<div class="row mt-50">
+    <div class="col-md-4">
+        <img src="@Model.ImageUrl" class="img-rounded"/>
+    </div>
+    
+    <div class="col-md-4">
+        
+    </div>
+    <div style="text-align: center">
+        <div class="col-md-4 mt-50" >
+            <p align="center">
+                <h1>@Model.Brand</h1>
+            </p>
+            <p align="center">
+                <h1>@Model.Model</h1>
+            </p>
+            <p align="center">
+                <h1>@Model.Color</h1>
+            </p>
+            <p>
+                <a class=" btn btn-danger text-center" href="@Model.ImageUrl">Download This Picture</a>
+            </p>
+        </div>
+    </div>
+    
+</div>

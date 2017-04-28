@@ -1,0 +1,28 @@
+﻿@model IEnumerable<SnekaersGallery.Models.Sneakers.IndexSneaker>
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="mt-50" style="background-color: white">
+    <h1 class="text-center" style="color: red"><font face="League Spartan" size="30">Sneaker Gallery</font></h1>
+    
+        
+    <p class="text-center " style="color: red"><font face="League Spartan" size="5">The place to post your grails</font></p>
+    
+   
+</div>
+
+<div class="row">
+    @foreach (var sneaker in Model)
+    {
+        <div class="col-md-4">
+            <a href="../Sneakers/Details/@sneaker.Id "/>
+                <img src="@sneaker.ImageUrl" class="img-responsive">
+           
+        </div>
+
+    }
+
+</div>

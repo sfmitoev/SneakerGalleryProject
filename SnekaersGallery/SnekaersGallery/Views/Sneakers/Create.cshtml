@@ -1,0 +1,16 @@
+﻿@model SnekaersGallery.Models.Sneakers.SneakerModel
+    
+@{
+    ViewBag.Title = "Add Sneaker";
+}
+<div class="text-center">
+    @using (Html.BeginForm("Create", "Sneakers", FormMethod.Post))
+    {
+        @Html.EditorForModel()
+
+        <br />
+        <div>
+            <input type="submit" class="btn btn-danger" value="Post Sneaker" />
+        </div>
+    }
+</div>
